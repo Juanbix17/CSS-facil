@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mi primer maqueta - Pseudoclases CSS</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Fuente Poppins y Bootstrap Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Hoja de estilos propia -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background-color: #102a2a;
+            font-family: 'Poppins', sans-serif;
+            color: #f2f7f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegación superior */
+        .caja-menu {
+            background-color: #102a2a;
+            border-bottom: 1px solid #315653;
+            padding: 12px 20px;
+        }
+
+        .btn-nav {
+            background-color: #183b3a;
+            color: #a9c4bc;
+            border: 1px solid #315653;
+            border-radius: 10px;
+            padding: 7px 15px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background-color: #17665f;
+            color: #ffffff;
+            border-color: #15988b;
+        }
+
+        .btn-nav.activo {
+            background-color: #168f83;
+            color: #ffffff;
+            border-color: #52c9b6;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Banner superior más pequeño y centrado */
+        .caja5 {
+            background-color: #174b49;
+            overflow: hidden;
+            padding: 16px 20px;
+            border-bottom: 1px solid #315653;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-banner {
+            max-height: 150px;
+            max-width: 75%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        /* Bloques introductorios */
+        .caja6 {
+            min-height: 250px;
+            background: linear-gradient(135deg, #174b49 0%, #17665f 100%);
+            padding: 35px 30px;
+            border-bottom: 1px solid #315653;
+            border-right: 1px solid #315653;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .caja7 {
+            min-height: 250px;
+            background-color: #183b3a;
+            padding: 20px;
+            border-bottom: 1px solid #315653;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Tarjetas de Pseudoclases */
+        .caja-pseudo {
+            min-height: 290px;
+            border-right: 1px solid #315653;
+            border-bottom: 1px solid #315653;
+            transition: background-color 0.25s ease, transform 0.2s ease;
+        }
+
+        .caja-pseudo:hover {
+            background-color: #24504d !important;
+        }
+
+        .tono-1 {
+            background-color: #183b3a;
+        }
+
+        .tono-2 {
+            background-color: #143332;
+        }
+
+        .tono-3 {
+            background-color: #174b49;
+        }
+
+        .codigo-ejemplo {
+            font-size: 0.75rem;
+            background-color: #102a2a;
+            border: 1px solid #315653;
+            color: #9be5d5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+        <!-- Menú de navegación -->
+        <div class="caja-menu">
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <a href="index.html" class="btn-nav">Estructura y Sintaxis</a>
+                <a href="especificidad.html" class="btn-nav">Niveles de Especificidad</a>
+                <a href="pagina2.html" class="btn-nav activo">PseudoClases y Pseudo Elementos</a>
+                <a href="caja.html" class="btn-nav">Modelo de Caja</a>
+            </div>
+        </div>
+
+        <div class="row g-0">
+            <!-- Primera imagen pequeña y centrada -->
+            <div class="col-12 caja5">
+                <img src="css pseudo.webp" alt="Imagen de pseudoclases CSS" class="img-fluid img-banner">
+            </div>
+
+            <!-- Introducción -->
+            <div class="col-12 col-md-12 col-lg-6 caja6 text-white">
+                <h1 class="fw-bold mb-3">¿Qué es una pseudoclase CSS?</h1>
+                <p class="lead mb-0" style="color: #c1eee2; font-size: 1.05rem;">
+                    Se utilizan para hacer referencia a elementos HTML que tengan un cierto comportamiento concreto.
+                    Volvamos a recordar el esquema general de sintaxis de CSS, donde ahora añadiremos las pseudoclases,
+                    que se definen añadiendo dos puntos antes del nombre de la pseudoclase concreta.
+                </p>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-6 caja7">
+                <img src="pseudoclases.webp" alt="Imagen de pseudoclases"
+                    class="img-fluid rounded border border-secondary" style="max-height: 210px; object-fit: cover;">
+            </div>
+
+            <!-- Caja 8 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-1 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-primary px-3 py-2 mb-3 fw-bold">:hover</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #54d6c2; font-weight: 600;">Pseudoclase de interacción</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Se utiliza para aplicar estilos cuando el usuario pasa el cursor del ratón sobre el elemento.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">a:hover { color: red; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 9 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-2 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-primary px-3 py-2 mb-3 fw-bold">:active</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #54d6c2; font-weight: 600;">Pseudoclase de interacción</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Se utiliza para darle feedback visual al usuario al hacer clic en un elemento.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">a:active { color: blue; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 10 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-3 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-primary px-3 py-2 mb-3 fw-bold">:focus</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #54d6c2; font-weight: 600;">Pseudoclase de interacción</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Se activa cuando un elemento recibe el foco al seleccionarlo o navegar con Tab.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">input:focus { border: blue; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 11 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-1 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-primary px-3 py-2 mb-3 fw-bold">:focus-within</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #54d6c2; font-weight: 600;">Pseudoclase de interacción</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Se activa si el elemento o cualquiera de sus hijos directos tiene el foco activo.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">form:focus-within { ... }</code>
+                </div>
+            </div>
+
+            <!-- Caja 12 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-2 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-primary px-3 py-2 mb-3 fw-bold">:focus-visible</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #54d6c2; font-weight: 600;">Pseudoclase de interacción</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Muestra el indicador de foco inteligente solo cuando se navega mediante teclado.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">btn:focus-visible { ... }</code>
+                </div>
+            </div>
+
+            <!-- Caja 13 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-3 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-info text-dark px-3 py-2 mb-3 fw-bold">:any-link</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #72d8c2; font-weight: 600;">Pseudoclase de enlaces</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Representa cualquier elemento que actúe como un enlace (visitado o no).</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">nav :any-link { color: cyan; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 14 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-1 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-info text-dark px-3 py-2 mb-3 fw-bold">:link</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #72d8c2; font-weight: 600;">Pseudoclase de enlaces</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Selecciona enlaces que aún no han sido visitados por el usuario actual.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">a:link { color: orange; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 15 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-3 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-info text-dark px-3 py-2 mb-3 fw-bold">:visited</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #72d8c2; font-weight: 600;">Pseudoclase de enlaces</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Selecciona enlaces que el usuario ya ha visitado previamente en su navegador.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">a:visited { color: purple; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 16 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-1 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-info text-dark px-3 py-2 mb-3 fw-bold">:target</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #72d8c2; font-weight: 600;">Pseudoclase de enlaces</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Se activa cuando un elemento tiene un ID que coincide con el ancla de la URL.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">section:target { bg: yellow; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 17 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-3 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-success px-3 py-2 mb-3 fw-bold">:lang()</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #9bd6a4; font-weight: 600;">Pseudoclase estructural</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Selecciona elementos basándose en el idioma especificado en su atributo lang.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">p:lang(es) { quotes: "«" "»"; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 18 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-2 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-success px-3 py-2 mb-3 fw-bold">:dir()</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #9bd6a4; font-weight: 600;">Pseudoclase estructural</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Aplica estilos según la dirección del texto (izquierda a derecha o viceversa).</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">:dir(rtl) { direction: rtl; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 19 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-1 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-success px-3 py-2 mb-3 fw-bold">:root</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #9bd6a4; font-weight: 600;">Pseudoclase estructural</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Representa el elemento raíz del documento (suele ser la etiqueta &lt;html&gt;).</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">:root { --main-color: #0d; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 20 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-3 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-success px-3 py-2 mb-3 fw-bold">:host</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #9bd6a4; font-weight: 600;">Pseudoclase estructural</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Selecciona el elemento contenedor sombra desde dentro de su propio Shadow DOM.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">:host { display: block; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 21 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-2 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3 fw-bold">:checked</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #e8b66c; font-weight: 600;">Pseudoclase de estado</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Selecciona elementos de formulario activados como checkboxes o radio buttons.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">input:checked { accent: green; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 22 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-1 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3 fw-bold">:fullscreen</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #e8b66c; font-weight: 600;">Pseudoclase de estado</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Aplica estilos a cualquier elemento que se esté visualizando en pantalla completa.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">video:fullscreen { width: 100vw; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 23 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-2 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3 fw-bold">:modal</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #e8b66c; font-weight: 600;">Pseudoclase de estado</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Selecciona un elemento que esté en un estado donde intercepte interacción (ej. diálogo).</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">dialog:modal { bg: white; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 24 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-1 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3 fw-bold">:first</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #e8b66c; font-weight: 600;">Pseudoclase de estado</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Se utiliza principalmente en reglas de impresión para seleccionar la primera página.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">@page :first { margin: 2cm; }</code>
+                </div>
+            </div>
+
+            <!-- Caja 25 -->
+            <div class="col-6 col-md-4 col-lg-2 caja-pseudo tono-3 p-3 text-center d-flex flex-column justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <span class="badge bg-success px-3 py-2 mb-3 fw-bold">:only-child</span>
+                    <p class="mb-2 w-100" style="font-size: 0.85rem; color: #9bd6a4; font-weight: 600;">Pseudoclase estructural</p>
+                    <p class="text-light mb-2 w-100" style="font-size: 0.80rem; line-height: 1.4;">Selecciona un elemento que sea el único hijo de su contenedor, sin hermanos.</p>
+                </div>
+                <div class="mt-auto pt-3 border-top border-secondary border-opacity-50 w-100">
+                    <span class="d-block fw-bold mb-1 text-secondary" style="font-size: 0.65rem; letter-spacing: 1px;">Sintaxis / Ejemplo</span>
+                    <code class="d-block p-2 rounded codigo-ejemplo">li:only-child { color: green; }</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

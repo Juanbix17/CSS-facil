@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Infografía Oficial: Niveles de Especificidad CSS</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #102a2a;
+            font-family: 'Poppins', sans-serif;
+            color: #f2f7f3;
+            padding: 20px 0;
+        }
+
+        .row {
+            text-align: center;
+        }
+
+        .caja-menu {
+            background-color: #183b3a;
+            border: 1px solid #315653;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn-nav {
+            background-color: #102a2a;
+            color: #a9c4bc;
+            border: 1px solid #315653;
+            border-radius: 12px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background-color: #17665f;
+            color: #ffffff;
+            border-color: #15988b;
+            transform: translateY(-2px);
+        }
+
+        .btn-nav.activo {
+            background-color: #168f83;
+            color: #ffffff;
+            border-color: #52c9b6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+        }
+
+        .caja1 {
+            min-height: 150px;
+            background: linear-gradient(135deg, #174b49, #17665f);
+            color: #ffffff;
+            padding: 30px 20px;
+            border-radius: 20px !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            margin-bottom: 20px;
+        }
+
+        .info-card {
+            background-color: #183b3a;
+            border: 1px solid #315653;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            text-align: left;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .badge-puntos {
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .code-box {
+            background-color: #102a2a;
+            border: 1px solid #315653;
+            border-radius: 10px;
+            padding: 12px 15px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #54d6c2;
+            margin-top: 15px;
+            white-space: pre-line;
+        }
+
+        h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #a9c4bc;
+        }
+
+        .btn-custom {
+            background-color: #15988b;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 10px 24px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-custom:hover {
+            background-color: #28a99a;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .img-container {
+            background-color: #183b3a;
+            border: 1px solid #315653;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 25px;
+        }
+
+        .img-fluid-custom {
+            max-height: 450px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid px-4">
+        <div class="row g-3">
+
+            
+            <div class="col-12 caja-menu">
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <a href="index.html" class="btn-nav">Estructura y Sintaxis</a>
+                    <a href="especificidad.html" class="btn-nav activo">Niveles de Especificidad</a>
+                    <a href="pagina2.html" class="btn-nav">PseudoClases y Pseudo Elementos</a>
+                    <a href="caja.html" class="btn-nav">Modelo de Caja</a>
+                </div>
+            </div>
+
+           
+            <div class="col-12 caja1">
+                <h2>Infografía Oficial: El Algoritmo de Especificidad en CSS</h2>
+                <p style="color: #c1eee2;">Basado en los conceptos clave de CódigoFacilito. El navegador calcula un puntaje matemático representado en columnas para determinar qué regla CSS tiene prioridad absoluta.</p>
+               
+            </div>
+
+          
+            <div class="col-12">
+                <div class="img-container">
+                    <h3 style="color: #54d6c2; margin-bottom: 15px;">Tabla Oficial de Puntuación y Pesos</h3>
+                    <p style="max-width: 800px; margin: 0 auto 20px auto;">Esquema visual de pesos por selector (de <code>!important</code> hasta el selector universal).</p>
+                    <img src="especificidad.webp" alt="Tabla de Especificidad CSS" class="img-fluid img-fluid-custom">
+                </div>
+            </div>
+
+           
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="info-card">
+                    <span class="badge-puntos" style="background-color: rgba(239, 68, 68, 0.2); color: #df927c;">Puntaje: 1, 0, 0, 0, 0</span>
+                    <h3>1. !important</h3>
+                    <p>No es un selector en sí, sino una directiva que fuerza la aplicación de una regla de estilo por encima de cualquier cálculo de especificidad normal.</p>
+                    <div class="code-box">
+.elemento {
+  color: blue !important;
+}
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="info-card">
+                    <span class="badge-puntos" style="background-color: rgba(245, 158, 11, 0.2); color: #efc878;">Puntaje: 0, 1, 0, 0, 0</span>
+                    <h3>2. Selectores de ID (#ID)</h3>
+                    <p>Cada identificador único aporta un peso considerable en la segunda columna. Son muy difíciles de anular a menos que se use otro ID o <code>!important</code>.</p>
+                    <div class="code-box">
+#seccion-principal {
+  background-color: #174b49;
+}
+                    </div>
+                </div>
+            </div>
+
+         
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="info-card">
+                    <span class="badge-puntos" style="background-color: rgba(168, 85, 247, 0.2); color: #e5b66d;">Puntaje: 0, 0, 1, 0, 0</span>
+                    <h3>3. Estilos en Línea</h3>
+                    <p>Aplicados directamente en la etiqueta HTML mediante el atributo <code>style=""</code>. Superan a clases y selectores de elementos internos.</p>
+                    <div class="code-box">
+&lt;div style="width: 100px;"&gt;&lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="info-card">
+                    <span class="badge-puntos" style="background-color: rgba(59, 130, 246, 0.2); color: #52c9b6;">Puntaje: 0, 0, 0, 1, 0</span>
+                    <h3>4. Clases, Pseudo-clases y Atributos</h3>
+                    <p>Incluye clases (<code>.clase</code>), pseudo-clases (<code>:hover</code>, <code>:focus</code>) y selectores de atributos. Ideales para modularizar.</p>
+                    <div class="code-box">
+.btn-custom:hover {
+  opacity: 0.9;
+}
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="info-card">
+                    <span class="badge-puntos" style="background-color: rgba(34, 197, 94, 0.2); color: #9bd6a4;">Puntaje: 0, 0, 0, 0, 1</span>
+                    <h3>5. Elementos y Pseudo-elementos</h3>
+                    <p>Selectores de etiquetas HTML directas (<code>p</code>, <code>h1</code>, <code>div</code>) y pseudo-elementos (<code>::before</code>, <code>::after</code>).</p>
+                    <div class="code-box">
+p {
+  font-size: 14px;
+}
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="info-card">
+                    <span class="badge-puntos" style="background-color: rgba(148, 163, 184, 0.2); color: #a9c4bc;">Puntaje: 0, 0, 0, 0, 0</span>
+                    <h3>6. Selector Universal (*)</h3>
+                    <p>El asterisco selecciona cualquier elemento sin aportar peso adicional en el algoritmo de especificidad del navegador.</p>
+                    <div class="code-box">
+* {
+  box-sizing: border-box;
+}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
